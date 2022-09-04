@@ -7,8 +7,9 @@ import { Footer } from "./ui-components";
 import { AddPet } from "./ui-components";
 import { PetDetails } from "./ui-components";
 import { withAuthenticator } from "@aws-amplify/ui-react";
+import { Storage } from "@aws-amplify/storage";
 
-
+function App({ user, signOut }) {
 	const [showForm, setShowForm] = useState(false);
 	const [showDetails, setShowDetails] = useState(false);
 	const [pet, setPet] = useState();
@@ -88,7 +89,6 @@ import { withAuthenticator } from "@aws-amplify/ui-react";
 			},
 			onClick: () => {
 				setShowForm(!showForm);
-				
 			},
 		},
 		Button: {
