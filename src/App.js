@@ -7,12 +7,7 @@ import { Footer } from "./ui-components";
 import { AddPet } from "./ui-components";
 import { PetDetails } from "./ui-components";
 import { withAuthenticator } from "@aws-amplify/ui-react";
-import { Storage } from "@aws-amplify/storage";
 
-function App({ user, signOut }) {
-	async function saveFile() {
-		await Storage.put("test.txt", "Hello");
-	}
 
 	const [showForm, setShowForm] = useState(false);
 	const [showDetails, setShowDetails] = useState(false);
@@ -93,7 +88,7 @@ function App({ user, signOut }) {
 			},
 			onClick: () => {
 				setShowForm(!showForm);
-				saveFile();
+				
 			},
 		},
 		Button: {
